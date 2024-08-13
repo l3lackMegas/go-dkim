@@ -20,7 +20,7 @@ import (
 
 const (
 	CRLF                = "\r\n"
-	TAB                 = " "
+	TAB                 = "	"
 	FWS                 = CRLF + TAB
 	MaxHeaderLineLength = 70
 )
