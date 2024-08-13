@@ -453,7 +453,7 @@ func parseDkHeader(header string) (dkh *DKIMHeader, err error) {
 // GetHeaderBase return base header for signers
 // Todo: some refactoring needed...
 func (d *DKIMHeader) getHeaderBaseForSigning(bodyHash string) string {
-	h := "DKIM-Signature: v=" + d.Version + "; a=" + d.Algorithm + "; q=" + strings.Join(d.QueryMethods, ":") + "; c=" + d.MessageCanonicalization + ";" + CRLF + TAB
+	h := "DKIM-Signature: v=" + d.Version + "; a=" + d.Algorithm + "; c=" + d.MessageCanonicalization + ";" + CRLF + TAB
 	subh := "s=" + d.Selector + ";"
 	if len(subh)+len(d.Domain)+4 > MaxHeaderLineLength {
 		h += subh + FWS
