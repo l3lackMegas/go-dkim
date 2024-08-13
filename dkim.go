@@ -20,8 +20,9 @@ import (
 
 const (
 	CRLF                = "\r\n"
-	TAB                 = "	"
+	TAB                 = " "
 	FWS                 = CRLF + TAB
+	FWS2                 = CRLF + "	"
 	MaxHeaderLineLength = 70
 )
 
@@ -193,7 +194,7 @@ func Sign(email *[]byte, options SigOptions) error {
 		subh += string(c)
 		l++
 		if l >= MaxHeaderLineLength {
-			dHeader += subh + FWS
+			dHeader += subh + FWS2
 			subh = ""
 			l = 0
 		}
